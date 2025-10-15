@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L.S. Digital Template Editor</title>
+    <meta name="description" content="L.S. Digital TinyMCE Template Editor">
+
+    <link rel="icon" type="image/png" href="/template-editor/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/template-editor/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/template-editor/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Template Editor" />
+    <link rel="manifest" href="/template-editor/assets/favicon/site.webmanifest" />
+
+    <meta name="robots" content="no-follow">
+    <meta name="subject" content="Template Editor">
+    <meta name="rating" content="General">
+    <meta name="referrer" content="no-referrer">
+    <script src="/template-editor/tinymce/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+    <script>
+        tinymce.init({
+            selector: '#myTextarea',
+            height: 600,
+            plugins: [
+                'advlist', 'autolink', 'autosave', 'save', 'link', 'image', 'importcss', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+                'searchreplace', 'directionality', 'wordcount', 'visualblocks', 'visualchars', 'code', 'codesample', 'fullscreen', 'insertdatetime',
+                'media', 'table', 'quickbars', 'emoticons', 'accordian', 'help'
+            ],
+            toolbar: 'undo redo | accordian accordianremove | blocks fontfamily fontsize | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist | lineheight outdent indent | link image | table media | ' +
+                'forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl',
+            menubar: 'favs file edit view insert format tools table help',
+            autosave_ask_before_unload: true,
+            autosave_interval: '30s',
+            autosave_prefix: '{path}{query}-{id}-',
+            autosave_restore_when_empty: false,
+            autosave_retention: '2m',
+            image_advtab: true,
+            promotion: false,
+            onboarding: false,
+            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+            noneditable_class: 'mceNonEditable',
+            toolbar_mode: 'sliding',
+            contextmenu: 'link image table',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+            license_key: 'gpl', // gpl for open source, T8LK:... for commercial
+            iframe_attrs: {
+                'aria-required': 'true',
+                'aria-describedby': 'editor-description'
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <form method="post">
+        <textarea id="myTextarea">
+            <div>
+            <p style="padding-top: 16px;"><img style="display: block; margin-left: auto; margin-right: auto;" title="L.S. Digital Logo" src="https://lesley.sirv.com/Images/icon-512.png" alt="L.S. Digital Logo" width="128" height="128"></p>
+  <h2 style="text-align: center;">L.S. Digital Template Editor</h2>
+  <p style="text-align: center; padding-bottom: 16px;">Customize Your L.S. Digital Templates Here!</p>
+  </div>
+        </textarea>
+    </form>
+
+    <script>
+        const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
+    </script>
+</body>
+
+</html>
